@@ -6,10 +6,17 @@ public class Bomb extends Actor
  
     public void act()
     {
-        move(-10);
+        move(-15);
         if(getX() <= 0)
         {
             resetBomb();
+        }
+        
+        if(isTouching(Someguy.class))
+        {
+            Skull skull =  new Skull();
+            getWorld().addObject(skull, 300, 200);
+            getWorld().removeObject(this);
         }
     }
     

@@ -10,5 +10,7 @@ public class MyWorld extends World {
         
         Bomb bomb = new Bomb();
         addObject(bomb, 600, 100);
+        
+        
     }
 }
