@@ -30,5 +30,12 @@ public class MyWorld extends World {
     {
         score = score + 1;
         showText("Score: " + score, 50, 20);
+        
+        if(score % 5 == 0)
+        {
+            Bomb extraBomb = new Bomb();
+            int randomY = Greenfoot.getRandomNumber(400);
+            addObject(extraBomb, 600, randomY);
+        }
     }
 }
