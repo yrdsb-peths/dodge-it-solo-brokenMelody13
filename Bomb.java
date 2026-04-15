@@ -9,7 +9,7 @@ public class Bomb extends Actor
         move(speed);
         if(getX() <= 0)
         {
-            MyWorld world = (MyWorld) getWorld();
+            MyWorld world = (MyWorld)getWorld();
             world.increaseScore();
             
             if(speed > -25)
@@ -26,11 +26,12 @@ public class Bomb extends Actor
             int explodeY = guy.getY();
             
             getWorld().removeObject(guy);
-            getWorld().removeObject(this);
             
             Skull skull =  new Skull();
             getWorld().addObject(skull, explodeX, explodeY);
             getWorld().showText("GAME OVER!", 300, 200);
+            
+            getWorld().removeObject(this);
             
             Greenfoot.stop();
         }
