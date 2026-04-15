@@ -2,6 +2,7 @@ import greenfoot.*;
 
 public class MyWorld extends World {
     int score= 0;
+   
     public MyWorld() 
     {
         super(600, 400, 1);
@@ -14,6 +15,15 @@ public class MyWorld extends World {
         
         
         showText("Score: " + score, 50, 20);
+    }
+    
+    public void pressStart()
+    {
+        if(Greenfoot.isKeyDown("space"))
+        {
+            showText("GAME START!", 300, 200);
+            Greenfoot.start();
+        }
     }
     
     public void increaseScore()
