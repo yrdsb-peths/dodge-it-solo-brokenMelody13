@@ -21,9 +21,18 @@ public class Bomb extends Actor
         
         if(isTouching(Someguy.class))
         {
-            Skull skull =  new Skull();
-            getWorld().addObject(skull, 300, 200);
+            Actor guy = getOneIntersectingObject(Someguy.class);
+            int explodeX = guy.getX();
+            int explodeY = guy.getY();
+            
+            getWorld().removeObject(guy);
             getWorld().removeObject(this);
+            
+            Skull skull =  new Skull();
+            getWorld().addObject(skull, explodeX, explodeY);
+            getWorld().showText("GAME OVER!", 300, 200);
+            
+            Greenfoot.stop();
         }
     }
     
