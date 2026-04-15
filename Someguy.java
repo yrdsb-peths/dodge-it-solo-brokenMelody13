@@ -2,22 +2,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Someguy extends Actor
 {
-    boolean atTop = true;
     
     public void act()
     {
-        if(Greenfoot.mouseClicked(null))
+        if(Greenfoot.isKeyDown("up"))
         {
-            atTop = !atTop;
+            setLocation(getX(), getY() - 5);
         }
         
-        if(atTop)
+        if(Greenfoot.isKeyDown("down"))
         {
-            setLocation(100, 100);
-        }
-        else
-        {
-            setLocation(100, 300);
+            setLocation(getX(), getY() + 5);
         }
     }
 }

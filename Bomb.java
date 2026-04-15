@@ -39,15 +39,7 @@ public class Bomb extends Actor
     
     public void resetBomb()
     {
-        int num = Greenfoot.getRandomNumber(2);
-        if(num == 0)
-        {
-            setLocation(600, 100);
-        }
-        else
-        {
-            setLocation(600, 300);
-        }
-        
+        int randomY = Greenfoot.getRandomNumber(400);
+        setLocation(600, randomY);
     }
 }
