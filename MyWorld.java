@@ -13,6 +13,9 @@ public class MyWorld extends World {
         Bomb bomb = new Bomb();
         addObject(bomb, 600, 100);
         
+        Minus1 pizza = new Minus1();
+        addObject(pizza, 600, 200);
+        
         
         showText("Score: " + score, 50, 20);
     }
@@ -37,5 +40,19 @@ public class MyWorld extends World {
             int randomY = Greenfoot.getRandomNumber(400);
             addObject(extraBomb, 600, randomY);
         }
+        
+        if(score % 2 == 0)
+        {
+            Minus1 extraMinus1 = new Minus1();
+            int randomY = Greenfoot.getRandomNumber(400);
+            addObject(extraMinus1, 600, randomY);
+        }
+
+    }
+    
+    public void decreaseScore()
+    {
+        score = score - 10;
+        showText("Score: " + score, 50, 20);
     }
 }
